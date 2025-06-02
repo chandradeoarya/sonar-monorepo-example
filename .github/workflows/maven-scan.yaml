@@ -11,6 +11,13 @@ on:
       - '.gitignore'
       - 'comp-maven/src/**/*'
       - 'comp-maven/pom.xml'
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.github/workflows/maven-scan.yaml'
+      - '.gitignore'
+      - 'comp-maven/src/**/*'
+      - 'comp-maven/pom.xml'
   workflow_dispatch:
 jobs:
   scan-maven:
@@ -28,13 +35,13 @@ jobs:
         with:
           java-version: 17
       - name: Cache SonarQube packages
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
       - name: Cache Maven packages
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}

@@ -11,6 +11,13 @@ on:
       - '.gitignore'
       - 'comp-dotnet/*.sln'
       - 'comp-dotnet/project/*.cs*'
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.github/workflows/dotnet-scan.yaml'
+      - '.gitignore'
+      - 'comp-dotnet/*.sln'
+      - 'comp-dotnet/project/*.cs*'
 
   workflow_dispatch:
 jobs:
@@ -27,14 +34,14 @@ jobs:
         with:
           java-version: 17
       - name: Cache SonarQube packages
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~\.sonar\cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
       - name: Cache SonarQube scanner
         id: cache-sonar-scanner
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: .\.sonar\scanner
           key: ${{ runner.os }}-sonar-scanner
