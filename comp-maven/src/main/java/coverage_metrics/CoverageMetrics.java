@@ -77,7 +77,7 @@ public static String toNada(int base10Num){
   * post: return true if val consists only of characters 1 and 0, false otherwise
   */
 public static boolean all0sAnd1s(String val){
-  assert val != null : "Failed precondition all0sAnd1s. parameter cannot be null";
+  assert val != null : "Failed precondition all 0s And 1s. parameter cannot be null";
   boolean all = true;
   int i = 0;
   char c;
