@@ -1,6 +1,6 @@
 #!python3
 #
-# gitlab project demo
+# Github action project demo
 #
 # Copyright (C) 2021 Olivier Korach
 # mailto:olivier.korach AT gmail DOT com
@@ -31,7 +31,7 @@ setuptools.setup(
     scripts=['demo-mr'],
     author="Olivier Korach",
     author_email="olivier.korach@gmail.com",
-    description="A demo monorepo GitLab project with GitLab CI and SonarQube scanner integration",
+    description="A demo monorepo Github action project with Github action CI and SonarQube scanner integration",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://gitlab.com/okorach/mr-demo",
